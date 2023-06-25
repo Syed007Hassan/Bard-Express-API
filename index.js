@@ -38,11 +38,11 @@ app.get("/create-response/:prompt", async (req, res) => {
     res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "*");
-    res.json({ message: response });
+    res.json({ response: response });
     
   } catch (error) {
     console.error("Error generating response:", error);
-    res.status(500).json({ message: "Error generating response" });
+    res.status(500).json({ response: "Error generating response" });
   }
 });
 
