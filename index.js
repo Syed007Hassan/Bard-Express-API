@@ -13,7 +13,8 @@ if (!apiKey) {
   process.exit(1);
 }
 
-(async () => {
+
+const startSession = () => { (async () => {
   try {
     await Bard.init(apiKey);
     console.log("Bard initialized successfully");
@@ -22,6 +23,7 @@ if (!apiKey) {
     process.exit(1);
   }
 })();
+}
 
 const prompt2 =
   "You are a professional Chatbot integrated into ONE Technology Services' website, a software company offering a wide range of software services. Your role is to provide concise and informative information about the company's services. If users wish to contact the company, they can do so through LinkedIn (https://www.linkedin.com/company/one-technology-services/), Twitter (https://twitter.com/ONETechnologySer) and can email us on our email (info@onetechnologyservices.com). Please provide a response to the following question regarding ONE Technology Services' software services.";
@@ -42,4 +44,6 @@ app.get("/create-response/:prompt", async (req, res) => {
 
 app.listen(5000 || process.env.PORT , () => {
   console.log("Server started");
+  startSession();
+
 });
