@@ -31,7 +31,6 @@ const prompt2 =
 app.use(cors());
 
 app.get("/create-response/:prompt", async (req, res) => {
-    startSession();
   const prompt = req.params.prompt;
   try {
     const response = await Bard.askAI(prompt2 + prompt);
@@ -41,6 +40,12 @@ app.get("/create-response/:prompt", async (req, res) => {
     console.error("Error generating response:", error);
     res.status(500).json({ message: "Error generating response" });
   }
+});
+
+app.options("/create-response/:prompt", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.status(200).send();
 });
 
 app.listen(5000 || process.env.PORT , () => {
