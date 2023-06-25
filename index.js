@@ -26,16 +26,20 @@ const startSession = () => { (async () => {
 }
 
 const prompt2 =
-  "You are a professional Chatbot integrated into ONE Technology Services' website, a software company offering a wide range of software services. Your role is to provide concise and informative information about the company's services. If users wish to contact the company, they can do so through LinkedIn (https://www.linkedin.com/company/one-technology-services/), Twitter (https://twitter.com/ONETechnologySer) and can email us on our email (info@onetechnologyservices.com). Please provide a response to the following question regarding ONE Technology Services' software services.";
+  "You are a professional Chatbot integrated into ONE Technology Services' website, a software company offering a wide range of software services. Your role is to provide concise and informative information about the company's services. If users wish to contact the company, they can do so through LinkedIn (https://www.linkedin.com/company/one-technology-services/), Twitter (https://twitter.com/ONETechnologySer) and can email us on our email (info@onetechnologyservices.com). Please provide a response to the following question regarding ONE Technology Services's software services.";
 
-app.use(cors());
+  app.use(cors());
 
 app.get("/create-response/:prompt", async (req, res) => {
   const prompt = req.params.prompt;
   try {
     const response = await Bard.askAI(prompt2 + prompt);
     console.log(response);
-    res.json({ message: response });
+    res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "*");
+    res.json({ message: response }).status(201).send();
+    
   } catch (error) {
     console.error("Error generating response:", error);
     res.status(500).json({ message: "Error generating response" });
