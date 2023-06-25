@@ -31,6 +31,7 @@ const prompt2 =
 app.use(cors());
 
 app.get("/create-response/:prompt", async (req, res) => {
+    startSession();
   const prompt = req.params.prompt;
   try {
     const response = await Bard.askAI(prompt2 + prompt);
