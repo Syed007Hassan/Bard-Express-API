@@ -1,4 +1,4 @@
-# Bard-Express-api
+# Bard-Express-API
 
 ```
 # Endpoint
