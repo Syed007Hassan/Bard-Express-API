@@ -1,8 +1,8 @@
-# starter-express-api
+# Bard-Express-api
 
-This is the simplest possible nodejs api using express that responds to any request with: 
 ```
-Yo!
+# Endpoint
+https://calm-plum-dove-tam.cyclic.app/create-response/<prompt>
 ```
 
 ### Deploy it in 7 seconds: 
