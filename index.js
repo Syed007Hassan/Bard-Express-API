@@ -7,7 +7,7 @@ const app = express();
 dotenv.config();
 
 // Retrieve the API key from the environment variables file
-const apiKey = 'YAjeLuEEFf58g6txvr56-Na_CafiZgXsu6FldB6NY9s31dsT7qIqsJymj7icBcSNuxmhNQ.'
+const apiKey = 'aAimvaKA0JMF_W-2uvv9SlSfbMA2Xv1tU3D0kYfQs3l6we-kcqETPf8jyplVK0Xm5DZkgw.'
 if (!apiKey) {
   console.error("BARD_API_KEY not found in environment variables");
   process.exit(1);

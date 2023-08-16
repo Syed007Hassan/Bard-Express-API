@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index2.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
-    "bard-ai": "^1.4.1",
+    "bard-ai": "^2.0.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
